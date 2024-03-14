@@ -173,6 +173,22 @@
 
   <script src="script.js"></script>
   <script>
+
+// Получаем элемент, который мы хотим отобразить в полноэкранном режиме
+var element = document.documentElement; // например, весь документ
+
+// Запускаем полноэкранный режим
+if (element.requestFullscreen) {
+  element.requestFullscreen();
+} else if (element.mozRequestFullScreen) { /* Firefox */
+  element.mozRequestFullScreen();
+} else if (element.webkitRequestFullscreen) { /* Chrome, Safari и Opera */
+  element.webkitRequestFullscreen();
+} else if (element.msRequestFullscreen) { /* IE/Edge */
+  element.msRequestFullscreen();
+}
+
+    
     const appElement = document.getElementById('app');
     const launchScreen = document.getElementById('launch');
     const loadingScreen = document.getElementById('loading');
